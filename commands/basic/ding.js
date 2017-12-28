@@ -3,15 +3,15 @@ const { Command } = require('discord.js-commando');
 module.exports = class ReplyCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'ping',
+            name: 'ding',
             group: 'basic',
-            memberName: 'ping',
-            description: 'Pongs back to you',
-            examples: ['ping']
+            memberName: 'ding',
+            description: 'Dongs back to you',
+            examples: ['ding']
         });
     }
 
     run(msg) {
-        return msg.say('pong');
+        return msg.say('dong');
     }
 };

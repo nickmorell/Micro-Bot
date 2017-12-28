@@ -13,6 +13,6 @@ module.exports = class ReplyCommand extends Command {
 
     run(msg) {
         console.log(msg.author.id);
-        return msg.say('@'+msg.author.id +' dong');
+        return msg.reply('dong');
     }
 };

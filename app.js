@@ -19,7 +19,7 @@ client.registry
 
 client.on('ready', () => {
     console.log('Logged in!');
-    client.user.setGame('Game');
+    client.user.setGame('Twitch Tv');
 });
 
 client.login(process.env.BOT_TOKEN);

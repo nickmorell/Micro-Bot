@@ -11,7 +11,7 @@ const client = new CommandoClient({
 client.registry
     .registerDefaultTypes()
     .registerGroups([
-        ['group1', 'Our First Command Group']
+        ['basic', 'Our Basic Command Group']
     ])
     .registerDefaultGroups()
     .registerDefaultCommands()

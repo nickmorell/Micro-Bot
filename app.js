@@ -1,14 +1,25 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { CommandoClient } = require('discord.js-commando');
+const path = require('path');
 
-client.on('ready', () => {
-  console.log('I am ready!');
+const client = new CommandoClient({
+    commandPrefix: '!',
+    unknownCommandResponse: false,
+    owner: process.env.OWNER_ID,
+    disableEveryone: true
 });
 
-client.on('message', message => {
-  if (message.content === 'ping') {
-    message.reply('pong');
-  }
+client.registry
+    .registerDefaultTypes()
+    .registerGroups([
+        ['group1', 'Our First Command Group']
+    ])
+    .registerDefaultGroups()
+    .registerDefaultCommands()
+    .registerCommandsIn(path.join(__dirname, 'commands'));
+
+client.on('ready', () => {
+    console.log('Logged in!');
+    client.user.setGame('Game');
 });
 
 client.login(process.env.BOT_TOKEN);

@@ -28,6 +28,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const { MessageHandler } = require('handlers/message');
+
+
+
 let ownerID = process.env.OWNER_ID
 
 client.on('ready', () => {
@@ -35,8 +39,13 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  if (message.content === 'ping') {
-    message.reply('pong');
+//   if (message.content === 'ping') {
+//     message.reply('pong');
+    
+    MessageHandler.handle(message);
+
+
+
   }
 });
 

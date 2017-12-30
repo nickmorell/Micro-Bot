@@ -13,6 +13,7 @@ module.exports = class RPSCommand extends Command {
             args: [
                 {
                     key: 'choice',
+                    prompt: 'What would you like to play: rock, paper, or scissors?',
                     type: 'string'
                 }
             ]

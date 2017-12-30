@@ -2,7 +2,7 @@ const { Command } = require('discord.js-commando');
 const string = require('lodash/string');
 const util = require('util');
 
-module.exports = class ReplyCommand extends Command {
+module.exports = class RPSCommand extends Command {
     constructor(client) {
         super(client, {
             name: 'rps',

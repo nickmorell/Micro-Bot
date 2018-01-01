@@ -130,4 +130,5 @@ bot.on('message', async message => {
 
 });
 
-bot.login(config.token);
+let token = process.env.BOT_TOKEN || config.token;
+bot.login(token);
